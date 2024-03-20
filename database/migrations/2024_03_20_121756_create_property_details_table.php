@@ -28,7 +28,7 @@ return new class extends Migration
             $table->integer('wet_point')->nullable();
             $table->float('acceptable_space')->nullable();
             $table->string('acceptable_type')->nullable();
-            $table->boolean('is_loji')->default('false');
+            $table->boolean('is_loji')->default(false);
             $table->float('loji_space')->nullable();
             $table->boolean('is_balcony')->default(false);
             $table->float('balcony_space')->nullable();

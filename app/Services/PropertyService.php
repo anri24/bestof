@@ -15,7 +15,7 @@ class PropertyService
     {
         $val = $request->validated();
         $property = $this->repository->store($val);
-        if ($property->category_id === 1){
+        if ($property->category_id == 1){
             $val['property_id'] = $property->id;
             PropertyDetails::create($val);
         }

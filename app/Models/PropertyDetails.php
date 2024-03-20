@@ -14,9 +14,9 @@ class PropertyDetails extends Model
     protected $fillable = [
         'property_id',
         'property_type',
-        'deal_type',
+        'deal_type_id',
         'property_status',
-        'city',
+        'city_id',
         'address',
         'ceiling_height',
         'space',
