@@ -10,37 +10,32 @@ class PropertyRepository implements PropertyRepositoryInterface
        private readonly Property $model
     ){}
 
-    public function index()
+    public function getAll()
     {
         return $this->model::query()->orderBy('id','DESC')->get();
     }
 
-    public function show($id)
+    public function findById($id)
     {
         return $this->model::query()->findOrFail($id);
     }
 
-    public function create()
-    {
-        // TODO: Implement create() method.
-    }
-
-    public function store($data)
+    public function create($data)
     {
         return $this->model::create($data);
     }
 
     public function update($data, $id)
     {
-        return $this->model::query()->findOrFail($id)->update($data);
+        return $this->findById($id)->update($data);
     }
 
     public function delete($id)
     {
-        return $this->model::query()->findOrFail($id)->delete();
+        return $this->findById($id)->delete();
     }
 
-    public function userHome($limit)
+    public function getUserHome($limit)
     {
         return $this->model::query()->orderBy('id','DESC')->limit($limit)->get();
     }
