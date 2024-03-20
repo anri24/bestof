@@ -6,12 +6,12 @@ use App\Http\Requests\PropertyRequest;
 use App\Http\Resources\PropertyResource;
 use App\Repositories\PropertyRepositoryInterface;
 use App\Services\PropertyService;
-use Illuminate\Http\Request;
 
 class PropertyController extends Controller
 {
     public function __construct(
-        private readonly PropertyRepositoryInterface $repository
+        private readonly PropertyRepositoryInterface $repository,
+        private readonly PropertyService $service,
     )
     {}
     public function index()
@@ -24,9 +24,9 @@ class PropertyController extends Controller
         return PropertyResource::make($this->repository->show($id));
     }
 
-    public function store(PropertyRequest $request,PropertyService $service)
+    public function store(PropertyRequest $request)
     {
-        return $service->store($request);
+        return $this->service->store($request->validated(),$this->repository);
     }
 
     public function update(PropertyRequest $request,$id)
