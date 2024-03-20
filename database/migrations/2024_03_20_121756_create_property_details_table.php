@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('property_details', function (Blueprint $table) {
             $table->id();
-            $table->integer('property_id');
+            $table->foreignId('property_id')->references('id')->on('properties')->cascadeOnDelete();
             $table->string('property_type')->nullable();
-            $table->integer('deal_type')->nullable();
+            $table->integer('deal_type_id')->nullable();
             $table->string('property_status')->nullable();
-            $table->string('city')->nullable();
+            $table->integer('city_id')->nullable();
             $table->string('address')->nullable();
             $table->float('ceiling_height')->nullable();
             $table->float('space')->nullable();
@@ -38,21 +38,21 @@ return new class extends Migration
             $table->string('pool_type')->nullable();
             $table->string('hot_water_type')->nullable();
             $table->string('heating_type')->nullable();
-            $table->string('electricity')->nullable();
-            $table->string('is_fireplace')->nullable();
-            $table->string('is_gas')->nullable();
-            $table->string('is_alarm')->nullable();
-            $table->string('is_passenger_elevator')->nullable();
-            $table->string('is_freight_elevator')->nullable();
-            $table->string('is_internet')->nullable();
-            $table->string('is_furniture')->nullable();
-            $table->string('is_phone')->nullable();
-            $table->string('is_tv')->nullable();
-            $table->string('is_air_conditioner')->nullable();
-            $table->string('is_fridge')->nullable();
-            $table->string('is_washing_machine')->nullable();
-            $table->string('is_dishwasher')->nullable();
-            $table->string('is_oven')->nullable();
+            $table->boolean('electricity')->default(false);
+            $table->boolean('is_fireplace')->default(false);
+            $table->boolean('is_gas')->default(false);
+            $table->boolean('is_alarm')->default(false);
+            $table->boolean('is_passenger_elevator')->default(false);
+            $table->boolean('is_freight_elevator')->default(false);
+            $table->boolean('is_internet')->default(false);
+            $table->boolean('is_furniture')->default(false);
+            $table->boolean('is_phone')->default(false);
+            $table->boolean('is_tv')->default(false);
+            $table->boolean('is_air_conditioner')->default(false);
+            $table->boolean('is_fridge')->default(false);
+            $table->boolean('is_washing_machine')->default(false);
+            $table->boolean('is_dishwasher')->default(false);
+            $table->boolean('is_oven')->default(false);
             $table->timestamps();
         });
     }
