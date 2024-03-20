@@ -22,7 +22,12 @@ class PropertyRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'category_id' => 'required',
+            'sub_category_id' => 'required',
+            'title' => 'required',
+            'description' => 'sometimes',
+            'price_type' => 'required',
+            'price' => 'required',
         ];
     }
 }

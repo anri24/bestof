@@ -12,7 +12,7 @@ class PropertyRepository implements PropertyRepositoryInterface
 
     public function index()
     {
-        return $this->model::all();
+        return $this->model::query()->orderBy('id','DESC')->get();
     }
 
     public function show($id)
