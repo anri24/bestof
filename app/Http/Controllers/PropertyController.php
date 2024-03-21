@@ -29,6 +29,11 @@ class PropertyController extends Controller
         return $this->service->store($request->validated(),$this->repository);
     }
 
+    public function edit($id)
+    {
+        return PropertyResource::make($this->repository->findById($id));
+    }
+
     public function update(PropertyRequest $request,$id)
     {
         return $this->repository->update($request->validated(),$id);

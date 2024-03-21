@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-use App\Models\PropertyDetails;
+use App\Models\PropertyDetail;
 
 class PropertyService
 {
@@ -19,6 +19,6 @@ class PropertyService
 
     private function storePropertyDetails($request)
     {
-        PropertyDetails::query()->create($request);
+        PropertyDetail::query()->create($request);
     }
 }
