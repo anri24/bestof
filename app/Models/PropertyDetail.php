@@ -61,4 +61,19 @@ class PropertyDetail extends Model
         'is_dishwasher',
         'is_oven',
     ];
+
+    public function property()
+    {
+        return $this->belongsTo(Property::class,'property_id','id');
+    }
+
+    public function dealType()
+    {
+        return $this->belongsTo(DealType::class,'deal_type_id','id');
+    }
+
+    public function city()
+    {
+        return $this->belongsTo(City::class,'city_id','id');
+    }
 }
