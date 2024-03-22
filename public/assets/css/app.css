@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.header{
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-links{
+    width: 400px;
+    display: flex;
+    /*justify-content: space-around;*/
+    justify-content: space-between;
+}
+
+.header-actions{
+    width: 70px;
+    display: flex;
+    justify-content: space-between;
+}
+.wishlist-icon{
+    border: none;
+}
+
+.header a:link, .header a:visited{
+    text-decoration: none;
+    color: #565656;
+}
+
+.header a:hover, .header a:active{
+    color: #E55472;
+}
+
+.header .header-user {
+    border: none;
+}
