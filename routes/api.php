@@ -11,6 +11,7 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 Route::controller(PropertyController::class)->group(function (){
+    Route::get('properties/{catId}','userIndex');
     Route::get('property/all','index');
     Route::get('property/{id}','show');
 

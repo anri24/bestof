@@ -14,5 +14,5 @@ interface PropertyRepositoryInterface
 
     public function delete($id);
 
-    public function getUserHome($limit);
+    public function getUserHome($catId);
 }

@@ -43,4 +43,9 @@ class PropertyController extends Controller
     {
         return $this->repository->delete($id);
     }
+
+    public function userIndex($catId)
+    {
+        return $this->repository->getUserHome($catId);
+    }
 }
