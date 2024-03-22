@@ -1,0 +1,20 @@
+
+.property-list{
+    width: 90%;
+    margin: 70px auto;
+}
+
+.div-property-title{
+    text-align: center;
+}
+
+.properties {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.properties .property {
+    width: 200px;
+    background-color: red;
+}

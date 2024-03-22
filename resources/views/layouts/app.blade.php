@@ -9,7 +9,6 @@
 
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Best Of</title>
-{{--    <link rel="stylesheet" href="{{ asset('assets/font-icons.css') }}">--}}
     <link rel="stylesheet" href="{{ asset('assets/css/app.css')  }}">
     @yield('style')
 </head>

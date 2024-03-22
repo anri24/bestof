@@ -37,6 +37,6 @@ class PropertyRepository implements PropertyRepositoryInterface
 
     public function getUserHome($catId)
     {
-        return $this->model::query()->where('category_id',$catId)->orderBy('id','DESC')->limit(10)->get();
+        return $this->model::query()->where('category_id',$catId)->orderBy('id','DESC')->limit(10)->with('propertyDetail')->get();
     }
 }
