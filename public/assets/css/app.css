@@ -14,7 +14,10 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #ced4da;
 }
+
+
 
 .header-links{
     width: 400px;
